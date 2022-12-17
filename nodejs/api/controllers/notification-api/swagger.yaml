@@ -1,0 +1,59 @@
+paths:
+  /notification-push-message:
+    post:
+      security:
+        - apikeyAuth: []
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+            properties:
+              topic:
+                type: string
+              title:
+                type: string
+              body:
+                type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+
+  /notification-get-list:
+    post:
+      security:
+        - apikeyAuth: []
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+            properties:
+              topic:
+                type: string
+              start:
+                type: integer
+              end:
+                type: integer
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
+
+  /notification-delete-allmessage:
+    post:
+      security:
+        - apikeyAuth: []
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+      responses:
+        200:
+          description: Success
+          schema:
+            type: object
