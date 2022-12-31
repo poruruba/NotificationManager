@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
             case 2: { // 今週
                 cal_end.add(Calendar.DATE, 1);
-                cal_start.add(Calendar.DATE, -7);
+                cal_start.add(Calendar.DATE, -6);
                 break;
             }
             case 3: { // 今月
