@@ -120,6 +120,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             String body = intent.getStringExtra("body");
             String datetime_str = intent.getStringExtra("datetime");
 
+            if( title == null && body == null && datetime_str == null )
+                return;
+            
             Intent activity_intent = new Intent(this, NotificationActivity.class);
             activity_intent.putExtra("title", title);
             activity_intent.putExtra("body", body);
