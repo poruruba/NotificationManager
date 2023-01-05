@@ -68,14 +68,21 @@ public class MyNotificationListenerService extends NotificationListenerService {
             String appName = helper.hasPackageName(db, packageName );
             if( appName != null ) {
                 String message_body;
-                if (tickerText != null) {
-                    message_body = tickerText.toString();
-                } else {
-                    message_body = text.toString();
-                    if (title != null)
-                        message_body = title + ":" + message_body;
-                    if (subText != null)
-                        message_body = message_body + ":" + subText.toString();
+                if( text != null ){
+                    if( title != null )
+                        message_body = title + ":" + text;
+                    else
+                        message_body = text.toString();
+                }else {
+                    if (tickerText != null) {
+                        message_body = tickerText.toString();
+                    } else {
+                        message_body = subText.toString();
+                        if (title != null)
+                            message_body = title + ":" + message_body;
+                        if (infoText != null)
+                            message_body = message_body + ":" + infoText;
+                    }
                 }
                 long datetime = Calendar.getInstance().getTimeInMillis();
                 JSONObject request = new JSONObject();
