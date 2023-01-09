@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void listUpdate(int position){
         Calendar cal_end = Calendar.getInstance();
-        cal_end.set(Calendar.HOUR, 0);
+        cal_end.set(Calendar.HOUR_OF_DAY, 0);
         cal_end.set(Calendar.MINUTE, 0);
         cal_end.set(Calendar.SECOND, 0);
         cal_end.set(Calendar.MILLISECOND, 0);
